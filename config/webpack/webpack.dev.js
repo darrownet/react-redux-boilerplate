@@ -22,12 +22,21 @@ module.exports = merge(common, {
     https: false,
     headers: { 'Access-Control-Allow-Origin': '*' }
   },
+  module: {
+    rules: [
+      {
+        test: /\.pug$/,
+        loader: 'pug-loader',
+        options: {self: true}
+      }
+    ]
+  },
   plugins: [
     new webpack.NamedModulesPlugin(),
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoEmitOnErrorsPlugin(),
     new HtmlWebpackPlugin({
-      template: resolve(__dirname, '../../index.html'),
+      template: resolve(__dirname, '../../src/templates/index.pug'),
       inject: true,
       data: {
         webpackDevServer: true

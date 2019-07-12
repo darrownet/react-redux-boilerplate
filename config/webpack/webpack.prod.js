@@ -1,8 +1,8 @@
 const merge = require('webpack-merge');
 const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const {resolve} = require('path');
+const { resolve } = require('path');
 
 const common = require('./webpack.common');
 
@@ -43,8 +43,24 @@ module.exports = merge(common, {
       })
     ]
   },
+  module: {
+    rules: [
+      {
+        test: /\.pug$/,
+        loader: 'pug-loader',
+        options: {self: false}
+      }
+    ]
+  },
   plugins: [
     new webpack.NamedModulesPlugin(),
-    new webpack.NoEmitOnErrorsPlugin()
+    new webpack.NoEmitOnErrorsPlugin(),
+    new HtmlWebpackPlugin({
+      template: resolve(__dirname, '../../src/templates/index.pug'),
+      inject: true,
+      data: {
+        webpackDevServer: false
+      }
+    })
   ]
 });
