@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { connect } from 'react-redux';
-import {actions} from "../core/actions/action-creators";
+import { actions } from "../core/actions/action-creators";
 
 class TodosList extends React.Component {
 
