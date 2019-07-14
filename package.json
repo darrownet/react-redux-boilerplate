@@ -6,7 +6,7 @@
   "scripts": {
     "build": "npm run clean-build && webpack --env.production -p --config=config/webpack/webpack.prod",
     "clean-build": "rm -f -r -d build",
-    "server": "nodemon server.js",
+    "server": "cd ./build && python -m SimpleHTTPServer 8000",
     "start": "webpack-dev-server --open --watch --config=config/webpack/webpack.dev"
   },
   "author": "Matt Schiffman",
