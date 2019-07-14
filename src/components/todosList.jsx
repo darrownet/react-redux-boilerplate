@@ -14,7 +14,7 @@ class TodosList extends React.Component {
       <ul>
         {this.props.todos.map((elem) => {
           return (
-            <li key={elem.id} className="todo-item">
+            <li key={elem.id} className="todo-item" id={elem.id}>
               <span>{elem.value}</span>
               <button onClick={() => this.deleteItem(elem.id)} className="todo-item-close">X</button>
             </li>

@@ -17,8 +17,10 @@ export default class App extends React.Component {
   render() {
     return(
       <Provider store={App.createStore()}>
-        <AddTodo />
-        <TodosList />
+        <div className="container">
+          <AddTodo />
+          <TodosList />
+        </div>
       </Provider>
     );
   };

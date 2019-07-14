@@ -1,19 +1,14 @@
 import * as types from '../actions/action-types';
 
+import { generateUniqueId } from '../services/generate-unique-id';
+
 let initialState = {
   todos: []
 };
 
-const generateId = (modifier) => {
-  const randomChars = () => {
-    return Math.random().toString(36).substr(2, 5);
-  };
-  return `${modifier}-${randomChars()}-${randomChars()}`;
-};
-
 const itemAdded = (todos, item) => {
   let newTodos = [...todos];
-  item.id = generateId(todos.length);
+  item.id = generateUniqueId.generate(todos.length);
   newTodos.push(item);
   return newTodos;
 };

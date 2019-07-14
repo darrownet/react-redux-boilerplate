@@ -1,3 +1,35 @@
-body {
-  background: red;
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  width: 640px;
+  border: 1px solid black;
+  padding: 10px;
+  margin : 40px auto;
+
+  form {
+    button {
+      width: 100px;
+      margin-left: 10px;
+    }
+    input {
+      width: calc(100% - 110px);
+    }
+  }
+
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+
+  li {
+    margin-top: 10px;
+    button {
+      margin-left: 10px;
+      cursor: pointer;
+    }
+  }
+
 }
