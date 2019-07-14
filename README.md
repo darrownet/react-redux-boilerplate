@@ -30,13 +30,13 @@ Clone the repo and run either of the following
     + A browser window should launch with the url **localhost:8080/**.
 
 ##### Workflow
-###### development mode (mostly for developing the React App)
+###### development mode
 - Run the command **npm start**. if you'd like to develop against the Application Server in addition to the webpack dev server, **npm start**
 - A browser window should open at http:localhost:8080
 - The react application should run
 - As you you work on the application, styling changes are instantly propagated to the browser (JavaScript/React updates will most likely update in the console and require a manual browser refresh - this is intentional as it disincentivizes monkey patching development behavior)
 
-###### production mode (mostly for developing the server)
+###### production mode
 - Run the command **npm run build** (VERY IMPORTANT! You will not be able to test a production scenario if you do not run a build first.)
 - Run the command **npm run server**
 - Open browser window at **localhost:8000/** to preview the application in production mode
